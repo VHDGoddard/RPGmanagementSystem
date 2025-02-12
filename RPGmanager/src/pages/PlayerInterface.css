@@ -1,0 +1,94 @@
+/* src/components/PlayerInterface.css */
+.crt-screen {
+    background-color: #001100;
+    color: #00ff00;
+    font-family: 'VT323', monospace;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .interface-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding: 15px;
+    text-shadow: 0 0 5px #00ff00;
+  }
+  
+  /* Efeito CRT */
+  .scanline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 255, 0, 0.1) 50%,
+      rgba(0, 0, 0, 0.2) 51%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    animation: scanline 2s linear infinite;
+  }
+  
+  @keyframes scanline {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(100%); }
+  }
+  
+  /* Elementos da Interface */
+  .status-bars .bar-container {
+    border: 2px solid #00ff00;
+    background: #002200;
+    height: 20px;
+  }
+  
+  .status-bars .bar {
+    height: 100%;
+    background: repeating-linear-gradient(
+      45deg,
+      #00ff00,
+      #00ff00 5px,
+      #002200 5px,
+      #002200 10px
+    );
+  }
+  
+  .inventory-item {
+    border: 1px solid #00ff00;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .inventory-item:hover {
+    background: rgba(0, 255, 0, 0.1);
+    box-shadow: 0 0 10px #00ff00;
+  }
+  
+  .chat-box, .events-list {
+    border: 2px solid #00ff00;
+    background: rgba(0, 20, 0, 0.8);
+    height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+  }
+  
+  .message-input input {
+    background: #002200;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    padding: 5px;
+    font-family: inherit;
+  }
+  
+  .effect-chip {
+    display: inline-block;
+    border: 1px solid #00ff00;
+    padding: 2px 5px;
+    margin: 2px;
+    background: rgba(255, 0, 0, 0.2);
+  }
